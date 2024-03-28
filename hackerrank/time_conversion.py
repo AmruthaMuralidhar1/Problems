@@ -9,7 +9,7 @@ def timeConversion(s):
             time[0] = "00"
     ntime = ':'.join(time)
     return str(ntime[:-2])
-
+#O(n)
 #Julia
 function timeConversion(s::AbstractString)
     time = split(s, ":")
