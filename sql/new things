@@ -1,0 +1,27 @@
+To check the characters in a string use right(name, 3) = checks the rightmost (last) 3 characters of the string
+to check if the city name starts with vowels use 
+select CITY from STATION where left(CITY, 1) = 'a' or left(CITY, 1) = 'e' or left(CITY, 1) = 'i' or left(CITY, 1) = 'o' or left(CITY, 1) = 'u';
+or 
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY LIKE 'A%' OR CITY LIKE 'E%' OR CITY LIKE 'I%' OR CITY LIKE 'O%' OR CITY LIKE 'U%';
+
+this is string ending with vowels
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY LIKE '%A' OR CITY LIKE '%E' OR CITY LIKE '%I' OR CITY LIKE '%O' OR CITY LIKE '%U';
+
+both starting and ending with vowels
+SELECT DISTINCT CITY
+FROM STATION
+WHERE LOWER(LEFT(CITY, 1)) IN ('a', 'e', 'i', 'o', 'u')
+AND LOWER(RIGHT(CITY, 1)) IN ('a', 'e', 'i', 'o', 'u');
+
+triangles
+SELECT CASE
+WHEN A + B <= C OR A + C <= B OR B + C <= A THEN 'Not A Triangle'
+WHEN A = B AND B = C THEN 'Equilateral'
+WHEN A = B OR B = C OR A = C THEN 'Isosceles'
+ELSE 'Scalene'
+END
+FROM TRIANGLES;
