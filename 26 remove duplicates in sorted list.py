@@ -9,6 +9,19 @@ class Solution:
                 j += 1
         return j
 
+
+with temporary array
+class Solution:
+    def removeDuplicates(self, nums):
+        tnum = []
+        tnum.append(nums[0])
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i-1]:
+                tnum.append(nums[i])
+        tnum.sort()
+        nums[:] = tnum      
+        return len(nums)
+
 in java
 import java.util.Arrays;
 
