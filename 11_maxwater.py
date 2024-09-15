@@ -5,6 +5,24 @@ class Solution(object):
         :rtype: int
         """
         n = len(height)
+        i = mx = 0
+        j = n-1
+        while(i<j):
+            temp = (j-i)*min(height[i],height[j])
+            mx = max(mx, temp)
+            if height[i] < height[j]:
+                i += 1
+            else:
+                j -= 1
+        return mx
+two pointer - take minimum of height becoause it can be that of the shorter side 
+class Solution(object):
+    def maxArea(self, height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+        n = len(height)
         mxr = 0
         lp = 0
         rp = n-1
